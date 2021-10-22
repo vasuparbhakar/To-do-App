@@ -12,26 +12,27 @@
 
         <hr>
 
-        <div id="todo-table">
+        <div id="todo-table" style="display: flex; justify-content: center;">
 
           <form action="/newtodo" method="POST">
-            <input type="text" name="to_do" placeholder="Add a new Task.." required />
-            <button type="submit">Add Item</button>
+            <input style="padding:4px;" type="text" name="to_do" placeholder="Add a new Task.." required />
+            <button style="margin-left: 12px; width: 62px;" type="submit" class="btn btn-outline-secondary btn-sm">Add</button>
           </form>
-
-          <hr>
+        </div>
 
           <div>
-            <ul>
-              <% for(let i of todolist) { %>
-                <li> <p> <%= i.todo %>  </p> </li>
-                <% } %>
+            <ul class="list-group">
+                <% for(let i of todolist) { %>
+                  <li style ="display: inline-block;" class="list-group-item"> <p> <%= i.todo %>  </p> </li>
+                  <div style="display: inline-block;">
+                    <i style ="margin: 6px" class="fas fa-calendar-alt"></i>
+                    <a style="margin: 6px" href="/delete-todo/?id=<%=i.id%>"><button type="button" class="btn btn-danger btn-sm">Task Done</i></button></a>
+                  </div>
+                  <% } %>
             </ul>
           </div>
 
-        </div>
-
-
+          <script src="https://kit.fontawesome.com/5ce563faa0.js" crossorigin="anonymous"></script>
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

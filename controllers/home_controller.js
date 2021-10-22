@@ -22,12 +22,26 @@ module.exports.newtodo = function(req,res){
     },function(err,newToDo){
         if(err)
         {
-            console.log("Error in creating a contact!");
+            console.log("Error in creating a todo!");
             return;
         }
 
     //    console.log('***********',newContact);
         res.redirect('/');
+    });
+}
+
+module.exports.delete_todo = function(req,res){
+    let id = req.query.id;
+
+    ToDo.findByIdAndDelete(id,function(err){
+        if(err)
+        {
+            console.log("Error in deleting an object from database");
+            return;
+        }
+
+        return res.redirect('/');
     });
 }
 

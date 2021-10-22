@@ -7,6 +7,7 @@ const homeController = require('../controllers/home_controller');
 
 router.get('/',homeController.home);
 router.post('/newtodo',homeController.newtodo);
+router.get('/delete-todo',homeController.delete_todo);
 router.use('/users',require('./users'));
 
 module.exports = router;
