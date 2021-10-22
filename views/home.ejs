@@ -23,11 +23,12 @@
           <div>
             <ul class="list-group">
                 <% for(let i of todolist) { %>
-                  <li style ="display: inline-block;" class="list-group-item"> <p> <%= i.todo %>  </p> </li>
-                  <div style="display: inline-block;">
-                    <i style ="margin: 6px" class="fas fa-calendar-alt"></i>
-                    <a style="margin: 6px" href="/delete-todo/?id=<%=i.id%>"><button type="button" class="btn btn-danger btn-sm">Task Done</i></button></a>
-                  </div>
+                  <li class="list-group-item "> <p style="display: inline-block;"> <%= i.todo %>  </p> 
+                    <div>
+                    <i  class="fas fa-calendar-alt"></i>
+                    <a  href="/delete-todo/?id=<%=i.id%>"><button style="margin-left: 6px;" type="button" class="btn btn-danger btn-sm">Task Done</i></button></a>
+                  </div> </li>
+                  
                   <% } %>
             </ul>
           </div>
