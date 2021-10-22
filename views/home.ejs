@@ -3,8 +3,37 @@
         <title>
         <%= title %>    
         </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
-        <h1>To Do App</h1>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">TO DO APP</span>
+          </nav>
+
+        <hr>
+
+        <div id="todo-table">
+
+          <form action="/newtodo" method="POST">
+            <input type="text" name="to_do" placeholder="Add a new Task.." required />
+            <button type="submit">Add Item</button>
+          </form>
+
+          <hr>
+
+          <div>
+            <ul>
+              <% for(let i of todolist) { %>
+                <li> <p> <%= i.todo %>  </p> </li>
+                <% } %>
+            </ul>
+          </div>
+
+        </div>
+
+
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

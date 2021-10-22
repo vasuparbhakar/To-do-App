@@ -2,12 +2,18 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
-// use express router
-app.use('/',require('./routes/index')); // middleware
+const db = require('./config/mongoose');
+const ToDo = require('./models/todo');
+
 
 // set up the view engine
 app.set('view engine','ejs');
 app.set('views','./views');
+app.use(express.urlencoded()); // Middleware (Parses the form data into keys and values)
+app.use(express.static('assets')); // Middleware (For static files)
+
+// use express router
+app.use('/',require('./routes/index')); // middleware
 
 app.listen(port,function(err){
     if(err)
