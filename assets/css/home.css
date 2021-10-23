@@ -1,0 +1,10 @@
+li:nth-child(2n+1){
+    background-image: linear-gradient(
+45deg, #a4f2f2, #efa7d7);
+}
+
+li:nth-child(2n){
+    background-image: linear-gradient(
+45deg, #9687b8 0%,#393d7a 75%);
+color: white;
+}
